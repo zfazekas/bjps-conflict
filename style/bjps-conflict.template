@@ -1,0 +1,93 @@
+%% Document template
+
+%% Slightly edited version of Kiearan Healy's template file
+%% See full description here: 
+%% http://kieranhealy.org/blog/archives/2014/01/23/plain-text/
+%% And quite some inspiration from Will Lowe as well
+%% http://conjugateprior.org/2013/03/tools-for-making-a-paper/
+%% We are grateful for their work and making it available to everybody
+%% Made our lives easier, much easier!
+
+%% Note: you might want to comment out the font related section, if you do
+%% not have Minion Pro installed
+
+\documentclass[11pt, a4paper]{article}
+
+%% Fonts
+\usepackage{MnSymbol}
+\usepackage{MinionPro}
+\usepackage[utf8]{inputenc}
+
+%% For tables
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{lscape}
+\usepackage{rotating}
+\usepackage{dcolumn}
+
+%% Page margins, inter-paragraph space and no chapters
+\usepackage[margin = 1.6in]{geometry}
+\usepackage{caption}
+\usepackage[parfill]{parskip}
+\renewcommand{\thesection}{\arabic{section}}
+
+%% Bibliography
+\usepackage[american]{babel}
+\usepackage{csquotes}
+\usepackage[style=apa,natbib=true, backend = biber]{biblatex}
+\DeclareLanguageMapping{american}{american-apa}
+
+%% Define a dark blue
+\usepackage{graphicx}
+\usepackage{color}
+\definecolor{darkblue}{rgb}{0,0,.5}
+
+%% hyperlinks to references
+\usepackage{hyperref}
+\hypersetup{colorlinks = true, 
+            linkcolor  = darkblue, 
+            citecolor  = darkblue, 
+            filecolor  = darkblue, 
+            urlcolor   = darkblue}
+\makeatletter
+\renewcommand\@seccntformat[1]{}
+\makeatother
+
+%% Footnote for tables and figures
+\long\def\clfootnote[#1]#2{\begingroup%
+\def\thefootnote{\fnsymbol{footnote}}\footnote[#1]{#2}\endgroup}
+
+%% Centered section titles and spacing
+\usepackage{sectsty}
+  \allsectionsfont{\centering}
+\usepackage{setspace}
+
+%% Set figure path
+\graphicspath{{../figures/}}
+
+$if(title)$
+  \title{\textbf{$title$}\footnote{$titlenote$}}
+$endif$
+
+\author{$for(author)$\normalsize $author.name$ \vspace{0.1in} \\ \normalsize\emph{$author.affiliation$} \\ \footnotesize \url{$author.email$}\vspace{0.1in} \\ $sep$ \and $endfor$}
+\date{$date$}
+
+\begin{document}
+  $if(title)$
+    \maketitle
+  $endif$
+
+  $if(abstract)$
+    \begin{abstract}
+      \noindent $abstract$
+    \end{abstract}
+  $endif$
+
+  \linespread{1.15}
+
+  $body$
+
+  $if(biblatex)$
+    \printbibliography$if(biblio-title)$[title=$biblio-title$]$endif$
+  $endif$
+\end{document}

@@ -1,0 +1,14 @@
+data/*
+formatted/*
+for-publisher/*
+R/.Rapp.history
+R/.Rhistory
+
+Thumbs.db
+.DS_Store
+.dropbox
+
+
+!.gitkeep
+.rbenv-version
+.rvmrc

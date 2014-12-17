@@ -1,0 +1,19 @@
+> sessionInfo()
+R version 3.1.0 (2014-04-10)
+Platform: x86_64-apple-darwin13.1.0 (64-bit)
+
+locale:
+[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
+
+attached base packages:
+[1] grid      stats     graphics  grDevices utils     datasets  methods   base     
+
+other attached packages:
+ [1] polycor_0.7-8  sfsmisc_1.0-26 mvtnorm_1.0-0  xtable_1.7-3   gtable_0.1.2   scales_0.2.4   reshape2_1.4  
+ [8] arm_1.7-03     MASS_7.3-33    plyr_1.8.1     dplyr_0.2      ggplot2_1.0.0  stargazer_5.1  lme4_1.1-7    
+[15] Rcpp_0.11.3    Matrix_1.1-4   foreign_0.8-61
+
+loaded via a namespace (and not attached):
+ [1] abind_1.4-0      assertthat_0.1   coda_0.16-1      colorspace_1.2-4 digest_0.6.4     labeling_0.2    
+ [7] lattice_0.20-29  minqa_1.2.3      munsell_0.4.2    nlme_3.1-117     nloptr_1.0.0     parallel_3.1.0  
+[13] proto_0.3-10     splines_3.1.0    stringr_0.6.2    tools_3.1.0  
