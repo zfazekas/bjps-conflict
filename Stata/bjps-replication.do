@@ -13,7 +13,8 @@
 // ----------------------------------------------------------------------------
 
 * Load data
-use "bjps-original.dta", clear
+* To install -usespss-: net from http://radyakin.org/transfer/usespss/beta
+usespss "S0007123413000525sup001.sav"
 
 * Include observations from Bulgaria on the covariates
 // Gender
