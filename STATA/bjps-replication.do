@@ -14,7 +14,7 @@
 
 * Load data
 * To install -usespss-: net from http://radyakin.org/transfer/usespss/beta
-usespss "S0007123413000525sup001.sav"
+usespss "../data/S0007123413000525sup001.sav"
 
 * Include observations from Bulgaria on the covariates
 // Gender
