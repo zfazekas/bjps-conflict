@@ -1,6 +1,7 @@
 data/*.sav
 data/*.dta
 data/*.pdf
+data/.Rapp.history
 formatted/*
 for-publisher/*
 R/.Rapp.history
