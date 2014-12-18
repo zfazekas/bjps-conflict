@@ -1,0 +1,486 @@
+FP <- cbind(FP, mu.fit.1, predict.fit.1$fit, predict.fit.1$se.fit)
+dim(FP)
+head(FP)
+names(FP)[11:13] <- c("predProb", "fitte", "se")
+names(FP)[11:13] <- c("predProb", "fitted", "se")
+ggplot(FP, aes(x = news_conflict_new_ny, y = predProb, group = v26_r_mean_ny)) + geom_line()
+summary(mixed.full$gamm)
+summary(mixed.full$gam)
+ggplot(FP, aes(x = news_conflict_new_ny, y = predProb, group = v26_r_mean_ny)) + geom_line() + geom_smooth(data = FP, #
+        aes(ymin = nlogit(fitted-2*se), ymax = nlogit(fitted+2*se), y =predProb, x = news_conflict_new_ny), stat="identity")
+ggplot(FP, aes(x = news_conflict_new_ny, y = predProb)) + geom_line() + geom_smooth(data = FP, #
+        aes(ymin = nlogit(fitted-1.96*se), ymax = nlogit(fitted+1.96*se), y =predProb, x = news_conflict_new_ny), stat="identity") + facet+grid(~v26_r_mean_ny)
+ggplot(FP, aes(x = news_conflict_new_ny, y = predProb)) + geom_line() + geom_smooth(data = FP, #
+        aes(ymin = nlogit(fitted-1.96*se), ymax = nlogit(fitted+1.96*se), y =predProb, x = news_conflict_new_ny), stat="identity") + facet_grid(~v26_r_mean_ny)
+ggplot(FP, aes(x = news_conflict_new_ny, y = predProb)) + geom_line() + geom_smooth(data = FP, #
+        aes(ymin = nlogit(fitted-1.96*se), ymax = nlogit(fitted+1.96*se), y =predProb, x = news_conflict_new_ny), stat="identity") + facet_grid(~v26_r_mean_ny) + plotTheme()
+ggplot(FP, aes(x = news_conflict_new_ny, y = predProb)) + geom_line() + geom_smooth(data = FP, #
+        aes(ymin = nlogit(fitted-1.96*se), ymax = nlogit(fitted+1.96*se), y =predProb, x = news_conflict_new_ny), stat="identity", colour = "black") + facet_grid(~v26_r_mean_ny) + plotTheme() + xlab("News conflict") + ylab("Predicted turnout")
+plot(a$news_conflict_new_ny, mixed.full$gam$fitted.values, type = "n", axes = F, #
+     ylab="Predicted probability", #
+     xlab="News conflict", bty="l", #
+     ylim = c(0, 1), main="(A) Spatial voting, full sample \n (with 95% CI)",#
+     font.main = 1, cex.main = 1.2)#
+#Slope for spatial voting#
+lines(FP$news_conflict_new_ny, mu.fit.1, col = "grey10", lwd = 2)
+lines(FP$news_conflict_new_ny, logit(predict.fit.1$fit-2*predict.fit.1$se.fit), col = "grey40", lty = 2)#
+lines(FP$news_conflict_new_ny logit(predict.fit.1$fit+2*predict.fit.1$se.fit), lty = 2, col = "grey40")
+plot(a$news_conflict_new_ny, mixed.full$gam$fitted.values, type = "n", axes = F, #
+     ylab="Predicted probability", #
+     xlab="News conflict", bty="l", #
+     ylim = c(0, 1), main="(A) Spatial voting, full sample \n (with 95% CI)",#
+     font.main = 1, cex.main = 1.2)#
+#Slope for spatial voting#
+lines(FP$news_conflict_new_ny, mu.fit.1, col = "grey10", lwd = 2)#
+lines(FP$news_conflict_new_ny, nlogit(predict.fit.1$fit-2*predict.fit.1$se.fit), col = "grey40", lty = 2)#
+lines(FP$news_conflict_new_ny nlogit(predict.fit.1$fit+2*predict.fit.1$se.fit), lty = 2, col = "grey40")
+plot(a$news_conflict_new_ny, mixed.full$gam$fitted.values, type = "n", axes = F, #
+     ylab="Predicted probability", #
+     xlab="News conflict", bty="l", #
+     ylim = c(0, 1), main="(A) Spatial voting, full sample \n (with 95% CI)",#
+     font.main = 1, cex.main = 1.2)#
+#Slope for spatial voting#
+lines(FP$news_conflict_new_ny, mu.fit.1, col = "grey10", lwd = 2)#
+lines(FP$news_conflict_new_ny, nlogit(predict.fit.1$fit-2*predict.fit.1$se.fit), col = "grey40", lty = 2)#
+lines(FP$news_conflict_new_ny
+lines(FP$news_conflict_new_ny, nlogit(predict.fit.1$fit+2*predict.fit.1$se.fit), lty = 2, col = "grey40")
+plot(a$news_conflict_new_ny, mixed.full$gam$fitted.values, type = "n", axes = F, #
+     ylab="Predicted probability", #
+     xlab="News conflict", bty="l", #
+     ylim = c(0, 1), main="(A) Spatial voting, full sample \n (with 95% CI)",#
+     font.main = 1, cex.main = 1.2)#
+#Slope for spatial voting#
+lines(FP$news_conflict_new_ny, mu.fit.1, col = "grey10", lwd = 2)#
+lines(FP$news_conflict_new_ny, nlogit(predict.fit.1$fit-2*predict.fit.1$se.fit), col = "grey40", lty = 2)#
+lines(FP$news_conflict_new_ny, nlogit(predict.fit.1$fit+2*predict.fit.1$se.fit), lty = 2, col = "grey40")
+a1 <- subset(FP, v26_r_mean_ny == "-0.26")
+plot(a1$news_conflict_new_ny, mixed.full$gam$fitted.values, type = "n", axes = F, #
+     ylab="Predicted probability", #
+     xlab="News conflict", bty="l", #
+     ylim = c(0, 1), main="(A) Spatial voting, full sample \n (with 95% CI)",#
+     font.main = 1, cex.main = 1.2)#
+#Slope for spatial voting#
+lines(a1$news_conflict_new_ny, mu.fit.1, col = "grey10", lwd = 2)
+plot(a1$news_conflict_new_ny, mixed.full$gam$fitted.values, type = "n", axes = F, #
+     ylab="Predicted probability", #
+     xlab="News conflict", bty="l", #
+     ylim = c(0, 1), main="(A) Spatial voting, full sample \n (with 95% CI)",#
+     font.main = 1, cex.main = 1.2)
+a1
+mu.fit.1
+mu.fit.1a <- mufit[1:156]
+mu.fit.1a <- mu.fit.1[1:156]
+plot(a1$news_conflict_new_ny, mu.fit.1a, type = "n", axes = F, #
+     ylab="Predicted probability", #
+     xlab="News conflict", bty="l", #
+     ylim = c(0, 1), main="(A) Spatial voting, full sample \n (with 95% CI)",#
+     font.main = 1, cex.main = 1.2)
+lines(a1$news_conflict_new_ny, mu.fit.1, col = "grey10", lwd = 2)
+lines(a1$news_conflict_new_ny, mu.fit.1.a, col = "grey10", lwd = 2)
+plot(a1$news_conflict_new_ny, mu.fit.1a, type = "n", axes = F, #
+     ylab="Predicted probability", #
+     xlab="News conflict", bty="l", #
+     ylim = c(0, 1), main="(A) Spatial voting, full sample \n (with 95% CI)",#
+     font.main = 1, cex.main = 1.2)#
+#Slope for spatial voting#
+lines(a1$news_conflict_new_ny, mu.fit.1a, col = "grey10", lwd = 2)
+predict.fit.1a <- predict.fit.1[1:156, ]
+predict.fit.1
+predict.fit.1a <- predict.fit.1[1:156]
+predict.fit.1a
+plot(a1$news_conflict_new_ny, mu.fit.1a, type = "n", axes = F, #
+     ylab="Predicted probability", #
+     xlab="News conflict", bty="l", #
+     ylim = c(0, 1), main="(A) Spatial voting, full sample \n (with 95% CI)",#
+     font.main = 1, cex.main = 1.2)#
+#Slope for spatial voting#
+lines(a1$news_conflict_new_ny, mu.fit.1a, col = "grey10", lwd = 2)#
+lines(a1$news_conflict_new_ny, nlogit(predict.fit.1a$fit-2*predict.fit.1a$se.fit), col = "grey40", lty = 2)#
+lines(a1$news_conflict_new_ny, nlogit(predict.fit.1a$fit+2*predict.fit.1a$se.fit), lty = 2, col = "grey40")
+nlogit(predict.fit.1a$fit-2*predict.fit.1a$se.fit)
+class(predict.fit.1)
+predict.fit.1a <- predict.fit.1[[1:156]]
+head(predict.fit.1)
+unlist(predict.fit.1)
+as.data.frame(unlist(predict.fit.1))
+matrix(unlist(predict.fit.1), byrow = T)
+matrix(unlist(predict.fit.1), byrow = F)
+matrix(unlist(predict.fit.1), ncol = 2, byrow = T)
+matrix(unlist(predict.fit.1), ncol = 2, byrow = F)
+predict.fit.1a <- data.frame(matrix(unlist(predict.fit.1), ncol = 2, byrow = F))
+head(predict.fit.1a)
+names(predict.fit.1a) <- c("fit", "se.fit")
+predict.fit.1a <- predict.fit.1a[1:156,]
+plot(a1$news_conflict_new_ny, mu.fit.1a, type = "n", axes = F, #
+     ylab="Predicted probability", #
+     xlab="News conflict", bty="l", #
+     ylim = c(0, 1), main="(A) Spatial voting, full sample \n (with 95% CI)",#
+     font.main = 1, cex.main = 1.2)#
+#Slope for spatial voting#
+lines(a1$news_conflict_new_ny, mu.fit.1a, col = "grey10", lwd = 2)#
+lines(a1$news_conflict_new_ny, nlogit(predict.fit.1a$fit-2*predict.fit.1a$se.fit), col = "grey40", lty = 2)#
+lines(a1$news_conflict_new_ny, nlogit(predict.fit.1a$fit+2*predict.fit.1a$se.fit), lty = 2, col = "grey40")
+plot(a1$news_conflict_new_ny, mu.fit.1a, type = "n", axes = F, #
+     ylab="Predicted probability", #
+     xlab="News conflict", bty="l", #
+     ylim = c(0, 1), main="(A) Spatial voting, full sample \n (with 95% CI)",#
+     font.main = 1, cex.main = 1.2)#
+axis(1, at = seq(round(min(FP$news_conflict_new_ny, na.rm=T), 2), round(max(FP$news_conflict_new_ny, na.rm=T), 2), by = 1), #
+    label = seq(round(min(FP$news_conflict_new_ny, na.rm=T), 2), round(max(FP$news_conflict_new_ny, na.rm=T), 2), by = 1), #
+    mgp = c(2,1,0), cex.axis = 0.8)    #
+axis(2, at = seq(0, 1, by = 0.25), label = seq(0, 1, by = 0.25), mgp = c(2,1,0), cex.axis = 0.8)
+Slope for spatial voting#
+lines(a1$news_conflict_new_ny, mu.fit.1a, col = "grey10", lwd = 2)#
+lines(a1$news_conflict_new_ny, nlogit(predict.fit.1a$fit-2*predict.fit.1a$se.fit), col = "grey40", lty = 2)#
+lines(a1$news_conflict_new_ny, nlogit(predict.fit.1a$fit+2*predict.fit.1a$se.fit), lty = 2, col = "grey40")
+ggplot(FP, aes(x = news_conflict_new_ny, y = predProb)) + geom_line() + geom_smooth(data = FP, #
+        aes(ymin = nlogit(fitted-1.96*se), ymax = nlogit(fitted+1.96*se), y =predProb, x = news_conflict_new_ny), stat="identity", colour = "black") + facet_grid(~v26_r_mean_ny) + plotTheme() + xlab("News conflict") + ylab("Predicted turnout")
+plot(a1$news_conflict_new_ny, mu.fit.1a, type = "n", axes = F, #
+     ylab="Predicted probability", #
+     xlab="News conflict", bty="l", #
+     ylim = c(0, 1), main="(A) Spatial voting, full sample \n (with 95% CI)",#
+     font.main = 1, cex.main = 1.2)#
+axis(1, at = seq(round(min(FP$news_conflict_new_ny, na.rm=T), 2), round(max(FP$news_conflict_new_ny, na.rm=T), 2), by = 1), #
+    label = seq(round(min(FP$news_conflict_new_ny, na.rm=T), 2), round(max(FP$news_conflict_new_ny, na.rm=T), 2), by = 1), #
+    mgp = c(2,1,0), cex.axis = 0.8)    #
+axis(2, at = seq(0, 1, by = 0.25), label = seq(0, 1, by = 0.25), mgp = c(2,1,0), cex.axis = 0.8)
+lines(a1$news_conflict_new_ny, mu.fit.1a, col = "grey10", lwd = 2)#
+lines(a1$news_conflict_new_ny, nlogit(predict.fit.1a$fit-2*predict.fit.1a$se.fit), col = "grey40", lty = 2)#
+lines(a1$news_conflict_new_ny, nlogit(predict.fit.1a$fit+2*predict.fit.1a$se.fit), lty = 2, col = "grey40")
+head(a)
+a1 <- model.frame(turnout ~ q8_1 + w2_DUMEDUCATION_ny + gender_female_ny + qage_ny + directcontact_ny + indirectcontact_ny + news_conflict_new_ny *v26_r_mean_ny + obl_voting_ny + elections_country_ny + countryStr, data = subset(BJPSORIG, countryStr == "AT" | countryStr == "FR" | countryStr == "SPA"))
+predict.fit.2 <- predict.gam(mixed.full$gam, newdata = a1, se.fit = TRUE)
+head(a1)
+a1 <- model.frame(turnout ~ q8_1 + w2_DUMEDUCATION_ny + gender_female_ny + qage_ny + directcontact_ny + indirectcontact_ny + news_conflict_new_ny *v26_r_mean_ny + obl_voting_ny + elections_country_ny, data = subset(BJPSORIG, countryStr == "AT" | countryStr == "FR" | countryStr == "SPA"))#
+head(a1)
+predict.fit.2 <- predict.gam(mixed.full$gam, newdata = a1, se.fit = TRUE)
+head(FP)
+predict.fit.2 <- predict.gam(mixed.full$gam, newdata = a, se.fit = TRUE)
+predict.fit.2 <- predict.gam(mixed.full$gam, newdata = na.omit(a), se.fit = TRUE)
+predict.fit.2 <- predict.gam(mixed.full$gam, se.fit = TRUE)
+head(predict.fit.2)
+B1 <- cbind(a, predict.fit.1)
+B1 <- cbind(a, predict.fit.2)
+head(B1)
+B1$predProb <- nlogit(B1$fit)#
+B1$upr <- nlogit(B1$fit - 2*B1$se.fit)#
+B1$lower <- nlogit(B1$fit + 2*B1$se.fit)
+table(b1$v26_r_mean_ny)
+table(B1$v26_r_mean_ny)
+table(B1$v26_r_mean_ny) ==  -0.257714603856653
+round(table(B1$v26_r_mean_ny), 3) ==  -0.258
+round(table(B1$v26_r_mean_ny), 3)
+round(as.numeric(table(B1$v26_r_mean_ny)), 3) ==  -0.258
+round(as.numeric(table(B1$v26_r_mean_ny)), 3)
+round(B1$v26_r_mean_ny), 3) ==  -0.258
+sum(round(B1$v26_r_mean_ny, 3) ==  -0.258)
+table(B1$v26_r_mean_ny)
+ggplot(subset(B1, round(B1$v26_r_mean_ny, 3) ==  -0.258 | round(B1$v26_r_mean_ny, 3) ==  -0.004 | round(B1$v26_r_mean_ny, 3) ==  0.116), aes(x = news_conflict_new_ny, y = predProb)) + geom_line()
+ggplot(subset(B1, round(B1$v26_r_mean_ny, 3) ==  -0.258 | round(B1$v26_r_mean_ny, 3) ==  -0.004 | round(B1$v26_r_mean_ny, 3) ==  0.116), aes(x = news_conflict_new_ny, y = predProb)) + geom_point(alpha = 0) + geom_smooth(data = subset(B1, round(B1$v26_r_mean_ny, 3) ==  -0.258 | round(B1$v26_r_mean_ny, 3) ==  -0.004 | round(B1$v26_r_mean_ny, 3) ==  0.116), #
+        aes(ymin = upr, ymax = lower, y =predProb, x = news_conflict_new_ny), stat="identity", colour = "black")
+ggplot(subset(B1, round(B1$v26_r_mean_ny, 3) ==  -0.258 | round(B1$v26_r_mean_ny, 3) ==  -0.004 | round(B1$v26_r_mean_ny, 3) ==  0.116), aes(x = news_conflict_new_ny, y = predProb)) + geom_point(alpha = 0) + geom_smooth(data = subset(B1, round(B1$v26_r_mean_ny, 3) ==  -0.258 | round(B1$v26_r_mean_ny, 3) ==  -0.004 | round(B1$v26_r_mean_ny, 3) ==  0.116), #
+        aes(ymin = upr, ymax = lower, y =predProb, x = news_conflict_new_ny),colour = "black") + facet_grid(~v26_r_mean_ny) + plotTheme() + xlab("News conflict") + ylab("Predicted turnout")
+ggplot(subset(B1, round(B1$v26_r_mean_ny, 3) ==  -0.258 | round(B1$v26_r_mean_ny, 3) ==  -0.004 | round(B1$v26_r_mean_ny, 3) ==  0.116), aes(x = news_conflict_new_ny, y = predProb)) + geom_point(alpha = 0) + geom_smooth(data = subset(B1, round(B1$v26_r_mean_ny, 3) ==  -0.258 | round(B1$v26_r_mean_ny, 3) ==  -0.004 | round(B1$v26_r_mean_ny, 3) ==  0.116), #
+        aes(ymin = upr, ymax = lower, y =predProb, x = news_conflict_new_ny),colour = "black") + plotTheme() + xlab("News conflict") + ylab("Predicted turnout")
+ggplot(subset(B1, round(B1$v26_r_mean_ny, 3) ==  -0.258 | round(B1$v26_r_mean_ny, 3) ==  -0.004 | round(B1$v26_r_mean_ny, 3) ==  0.116), aes(x = news_conflict_new_ny, y = predProb, colour = v26_r_mean_ny)) + geom_point(alpha = 0) + geom_smooth(data = subset(B1, round(B1$v26_r_mean_ny, 3) ==  -0.258 | round(B1$v26_r_mean_ny, 3) ==  -0.004 | round(B1$v26_r_mean_ny, 3) ==  0.116), #
+        aes(ymin = upr, ymax = lower, y =predProb, x = news_conflict_new_ny),colour = "black") + plotTheme() + xlab("News conflict") + ylab("Predicted turnout")
+ggplot(subset(B1, round(B1$v26_r_mean_ny, 3) ==  -0.258 | round(B1$v26_r_mean_ny, 3) ==  -0.004 | round(B1$v26_r_mean_ny, 3) ==  0.116), aes(x = news_conflict_new_ny, y = predProb, colour = v26_r_mean_ny)) + geom_point(alpha = 0) + geom_smooth(data = subset(B1, round(B1$v26_r_mean_ny, 3) ==  -0.258 | round(B1$v26_r_mean_ny, 3) ==  -0.004 | round(B1$v26_r_mean_ny, 3) ==  0.116), #
+        aes(ymin = upr, ymax = lower, y =predProb, x = news_conflict_new_ny)) + plotTheme() + xlab("News conflict") + ylab("Predicted turnout")
+ggplot(subset(B1, round(B1$v26_r_mean_ny, 3) ==  -0.258 | round(B1$v26_r_mean_ny, 3) ==  -0.004 | round(B1$v26_r_mean_ny, 3) ==  0.116), aes(x = news_conflict_new_ny, y = predProb, colour = v26_r_mean_ny, group = v26_r_mean_ny)) + geom_point(alpha = 0) + geom_smooth(data = subset(B1, round(B1$v26_r_mean_ny, 3) ==  -0.258 | round(B1$v26_r_mean_ny, 3) ==  -0.004 | round(B1$v26_r_mean_ny, 3) ==  0.116), #
+        aes(ymin = upr, ymax = lower, y =predProb, x = news_conflict_new_ny)) + plotTheme() + xlab("News conflict") + ylab("Predicted turnout")
+ggplot(subset(B1, round(B1$v26_r_mean_ny, 3) ==  -0.258 | round(B1$v26_r_mean_ny, 3) ==  -0.004 | round(B1$v26_r_mean_ny, 3) ==  0.116), aes(x = news_conflict_new_ny, y = predProb, colour = v26_r_mean_ny, group = v26_r_mean_ny)) + geom_point(alpha = 0) + geom_smooth(data = subset(B1, round(B1$v26_r_mean_ny, 3) ==  -0.258 | round(B1$v26_r_mean_ny, 3) ==  -0.004 | round(B1$v26_r_mean_ny, 3) ==  0.116), #
+        aes(ymin = upr, ymax = lower, y =predProb, x = news_conflict_new_ny), method = "lm") + plotTheme() + xlab("News conflict") + ylab("Predicted turnout")
+table2.orig.2.cor <- glmer(turnout ~ q8_1 + w2_DUMEDUCATION_ny + gender_female_ny + qage_ny + directcontact_ny + indirectcontact_ny + news_conflict_new_ny  + v26_r_mean_ny + obl_voting_ny + elections_country_ny + (1 + news_conflict_new_ny | countryStr), data = BJPSORIG, family = "binomial", verbose = T)#
+summary(table2.orig.2.cor)
+F2 <- data.frame(model.matrix(table2.orig.3))#
+nc <- seq(min(F2$news_conflict_new_ny), max(F2$news_conflict_new_ny), by = 0.25)#
+FP <- data.frame(nc)#
+FP$const <- fixef(table2.orig.3)[1]#
+FP$tint <- 4*fixef(table2.orig.3)[2]#
+FP$edu <- 2*fixef(table2.orig.3)[3]#
+FP$age <- 40*fixef(table2.orig.3)[5]#
+FP$indc <- fixef(table2.orig.3)[7]#
+FP$all <- rowSums(FP[, 2:6])#
+FP$low <- invlogit(FP$all + FP$nc*fixef(table2.orig.3)[8] + (-0.26)*fixef(table2.orig.3)[9] + FP$nc*(-0.26)*fixef(table2.orig.3)[12])#
+FP$mid <- invlogit(FP$all + FP$nc*fixef(table2.orig.3)[8] + (-0.04)*fixef(table2.orig.3)[9] + FP$nc*(-0.04)*fixef(table2.orig.3)[12])#
+FP$high <- invlogit(FP$all + FP$nc*fixef(table2.orig.3)[8] + (0.12)*fixef(table2.orig.3)[9] + FP$nc*(0.12)*fixef(table2.orig.3)[12])
+FP$atSamp <- NA#
+FP$spSamp <- NA#
+#
+for (i in 1:dim(FP)[1]){#
+  FP$atSamp[i] <- 1 - sum(BJPSORIG[BJPSORIG$countryStr == "AT", "news_conflict_new_ny"] <= FP[i, "nc"], na.rm = T)/sum(!is.na(BJPSORIG[BJPSORIG$countryStr == "AT", "news_conflict_new_ny"]))#
+  FP$spSamp[i] <- 1 - sum(BJPSORIG[BJPSORIG$countryStr == "SPA", "news_conflict_new_ny"] <= FP[i, "nc"], na.rm = T)/sum(!is.na(BJPSORIG[BJPSORIG$countryStr == "SPA", "news_conflict_new_ny"]))#
+}#
+#
+FP$diff <- FP$high - FP$low#
+ggplot(FP, aes(x = atSamp, y = diff)) + geom_line() + geom_line(data = FP, aes(x = spSamp, y = diff), colour = "red") + scale_x_continuous(labels = percent) + xlab("% of sample") + ylab("Difference in turnout probability (SPA-AT)") + plotTheme()
+ggplot(FP, aes(x = atSamp, y = diff)) + geom_line() + geom_line(data = FP, aes(x = spSamp, y = diff), colour = "red") + scale_x_continuous(labels = percent) + xlab("% of sample") + ylab("Difference in turnout probability (SPA-AT)") + plotTheme() + annotate("text", x = 0.2, y = 0.1, label = "Austria", colour = "black") + annotate("text", x = 0.2, y = 0.08, label = "Spain", colour = "red")
+ggplot(FP, aes(x = atSamp, y = diff)) + geom_line() + geom_line(data = FP, aes(x = spSamp, y = diff), colour = "red") + scale_x_continuous(labels = percent) + xlab("% of sample") + ylab("Difference in turnout probability (SPA-AT)") + plotTheme() + annotate("text", x = 0.2, y = 0.2, label = "Austria", colour = "black", hjust = 0, size = 3) + annotate("text", x = 0.2, y = 0.18, label = "Spain", colour = "red", hjust = 0, size = 3)
+ggplot(FP, aes(x = atSamp, y = diff)) + geom_line() + geom_line(data = FP, aes(x = spSamp, y = diff), colour = "red") + scale_x_continuous(labels = percent) + xlab("% of sample") + ylab("Difference in turnout probability (SPA-AT)") + plotTheme() + annotate("text", x = 0.2, y = 0.2, label = "Austria", colour = "black", hjust = 0, size = 3) + annotate("text", x = 0.2, y = 0.19, label = "Spain", colour = "red", hjust = 0, size = 3)
+nc
+BJPS <- BJPSNEW
+BJPS$news_conflict_new_ny[BJPS$news_exposure_ny == 0] <- 0
+require(psych)
+hetcor(BJPS$news_conflict_new_ny, BJPS$news_exposure_ny)
+require(polychor)
+require(polycor)
+hetcor(BJPS$news_conflict_new_ny, BJPS$news_exposure_ny)
+attributes(hetcor(BJPS$news_conflict_new_ny, BJPS$news_exposure_ny))
+hetcor(BJPS$news_conflict_new_ny, BJPS$news_exposure_ny)$correlations
+hetcor(BJPS$news_conflict_new_ny, BJPS$news_exposure_ny)$correlations[1, 2]
+hetcor(BJPS$news_conflict_new_ny, BJPS$turnout)$correlations[1, 2]
+hetcor(BJPS$news_conflict_new_ny, BJPS$turnout)
+hetcor(BJPS$news_conflict_new_ny, as.facto(BJPS$turnout))
+hetcor(BJPS$news_conflict_new_ny, as.factor(BJPS$turnout))
+hetcor(BJPS$news_conflict_new_ny, as.factor(BJPS$turnout))$std.errors
+cR <- ddply(BJPS, .(countryStr), summarise, #
+  confturn = hetcor(news_conflict_new_ny, as.factor(turnout))$correlations[1, 2]#
+confturnse = hetcor(news_conflict_new_ny, as.factor(turnout))$std.errors[1,2])
+cR <- ddply(BJPS, .(countryStr), summarise, #
+  confturn = hetcor(news_conflict_new_ny, as.factor(turnout))$correlations[1, 2],#
+confturnse = hetcor(news_conflict_new_ny, as.factor(turnout))$std.errors[1,2])
+cR
+cR <- ddply(BJPS, .(countryStr), summarise, #
+  confturn = hetcor(news_conflict_new_ny, as.factor(turnout))$correlations[1, 2],#
+confturnse = hetcor(news_conflict_new_ny, as.factor(turnout))$std.errors[1,2],#
+  expturn = hetcor(news_exposure_ny, as.factor(turnout))$correlations[1, 2],#
+expturnse = hetcor(news_exposure_ny, as.factor(turnout))$std.errors[1,2])
+cR
+cR <- ddply(BJPS, .(countryStr), summarise, #
+  confturn = hetcor(news_conflict_new_ny, as.factor(turnout))$correlations[1, 2],#
+  confturnse = hetcor(news_conflict_new_ny, as.factor(turnout))$std.errors[1,2],#
+  expturn = hetcor(news_exposure_ny, as.factor(turnout))$correlations[1, 2],#
+  expturnse = hetcor(news_exposure_ny, as.factor(turnout))$std.errors[1,2],#
+  expconf = hetcor(news_exposure_ny, news_conflict_new_ny)$correlations[1, 2],#
+  expconfse = hetcor(news_exposure_ny, news_conflict_new_ny)$std.errors[1,2])#
+#
+cR
+ggplot(cR, aes(expconf)) + geom_histogram(fill = NA, colour = "grey70") + annotate("text", 0.83, 1.2, label = "Lithuania", size = 3) + plotTheme()
+ggplot(cR, aes(expconf)) + geom_histogram(fill = NA, colour = "grey70") + annotate("text", 0.83, 1.2, label = "Lithuania", size = 3) + plotTheme() + xlab(paste0(expression(rho), " conflict x exposure"))
+ggplot(cR, aes(expconf)) + geom_histogram(fill = NA, colour = "grey70") + annotate("text", 0.83, 1.2, label = "Lithuania", size = 3) + plotTheme() + xlab(expression(rho))
+ggplot(cR, aes(expconf)) + geom_histogram(fill = NA, colour = "grey70") + annotate("text", 0.83, 1.2, label = "Lithuania", size = 3) + plotTheme() + xlab(expression(rho[news conflict x news exposure])) + ylab("Count")
+ggplot(cR, aes(expconf)) + geom_histogram(fill = NA, colour = "grey70") + annotate("text", 0.83, 1.2, label = "Lithuania", size = 3) + plotTheme() + xlab(expression(rho["news conflict x news exposure"])) + ylab("Count")
+cRM <- melt(cR[, 1:5], id = c("countryStr", "confturnse", "expturnse"))
+head(cRM)
+cRM
+cRM$lwr <- NA#
+cRM$upr <- NA#
+cRM$lwr[cRM$variable == "confturn"] <- value - 1.96*confturnse
+cRM$lwr[cRM$variable == "confturn"] <- cRM$value - 1.96*cRM$confturnse
+cRM$lwr[cRM$variable == "confturn"] <- cRM[cRM$variable == "confturn","value"] - 1.96*cRM[cRM$variable == "confturn","confturnse"]
+cRM
+cRM$lwr[cRM$variable == "expturn"] <- cRM[cRM$variable == "expturn","value"] - 1.96*cRM[cRM$variable == "expturn","expturnse"]#
+cRM$upr[cRM$variable == "expturn"] <- cRM[cRM$variable == "expturn","value"] + 1.96*cRM[cRM$variable == "expturn","expturnse"]
+cRM
+cRM$upr[cRM$variable == "confturn"] <- cRM[cRM$variable == "confturn","value"] + 1.96*cRM[cRM$variable == "confturn","confturnse"]
+cRM
+ggplot(cRM, aes(x = countryStr, y = value, ymin = lwr, ymax = upr, group = variable, colour = variable)) + geom_linerange() + plotTheme() + coord_flip()
+ggplot(cRM, aes(x = countryStr, y = value, ymin = lwr, ymax = upr, group = variable, colour = variable)) + geom_pointrange() + plotTheme() + coord_flip()
+ggplot(cRM, aes(x = countryStr, y = value, ymin = lwr, ymax = upr, group = variable, colour = variable)) + geom_pointrange(position = "dodge") + plotTheme() + coord_flip()
+ggplot(cRM, aes(x = countryStr, y = value, ymin = lwr, ymax = upr, group = variable, colour = variable)) + geom_pointrange(position = 1) + plotTheme() + coord_flip()
+ggplot(cRM, aes(x = countryStr, y = value, ymin = lwr, ymax = upr, group = variable, colour = variable)) + geom_pointrange(position = "dodge", width = 1) + plotTheme() + coord_flip()
+ggplot(cRM, aes(x = countryStr, y = value, ymin = lwr, ymax = upr, group = variable, colour = variable)) + geom_pointrange(position = position_dodge(width = 1)) + plotTheme() + coord_flip()
+ggplot(cRM, aes(x = countryStr, y = value, ymin = lwr, ymax = upr, group = variable, colour = variable)) + geom_pointrange(position = position_dodge(width = 0.5)) + plotTheme() + coord_flip()
+ggplot(cRM, aes(x = countryStr, y = value, ymin = lwr, ymax = upr, group = variable, colour = variable)) + geom_pointrange(position = position_dodge(width = 0.55)) + plotTheme() + coord_flip()
+ggplot(cRM, aes(x = countryStr, y = value, ymin = lwr, ymax = upr, group = variable, colour = variable)) + geom_pointrange(position = position_dodge(width = 0.55)) + plotTheme() + coord_flip() + theme(panel.grid.major = element_line())
+ggplot(cRM, aes(x = countryStr, y = value, ymin = lwr, ymax = upr, group = variable, colour = variable)) + geom_pointrange(position = position_dodge(width = 0.55)) + plotTheme() + coord_flip()
+ggplot(cRM, aes(x = countryStr, y = value, ymin = lwr, ymax = upr, group = variable, colour = variable)) + geom_pointrange(position = position_dodge(width = 0.55)) + plotTheme() + coord_flip() + scale_colour_manual("", values = c("expturn" = "grey50", "confturn" = "black"))
+ggplot(cRM, aes(x = countryStr, y = value, ymin = lwr, ymax = upr, group = variable, colour = variable)) + geom_pointrange(position = position_dodge(width = 0.55)) + plotTheme() + coord_flip() + scale_colour_manual("", values = c("expturn" = "grey60", "confturn" = "black"), labels = c("News conflict", "Media exposure"))
+ggplot(cRM, aes(x = countryStr, y = value, ymin = lwr, ymax = upr, group = variable, colour = variable)) + geom_pointrange(position = position_dodge(width = 0.55)) + plotTheme() + coord_flip() + scale_colour_manual("", values = c("expturn" = "grey60", "confturn" = "black"), labels = c("News conflict", "Media exposure")) + xlab(expression(rho["turnout x exposure variables"])) + ylab("")
+ggplot(cRM, aes(x = countryStr, y = value, ymin = lwr, ymax = upr, group = variable, colour = variable)) + geom_pointrange(position = position_dodge(width = 0.55)) + plotTheme() + coord_flip() + scale_colour_manual("", values = c("expturn" = "grey60", "confturn" = "black"), labels = c("News conflict", "Media exposure")) + ylab(expression(rho["turnout x exposure variables"])) + xlab("")
+ggplot(cRM, aes(x = countryStr, y = value, ymin = lwr, ymax = upr, group = variable, colour = variable)) + geom_pointrange(position = position_dodge(width = 0.55)) + plotTheme() + coord_flip() + scale_colour_manual("", values = c("expturn" = "grey60", "confturn" = "black"), labels = c("News conflict", "Media exposure")) + ylab(expression(rho["turnout x exposure variables"])) + xlab("") + theme(legend.position = c(0.8, 0.8))
+ggplot(cRM, aes(x = countryStr, y = value, ymin = lwr, ymax = upr, group = variable, colour = variable)) + geom_pointrange(position = position_dodge(width = 0.55)) + plotTheme() + coord_flip() + scale_colour_manual("", values = c("expturn" = "grey60", "confturn" = "black"), labels = c("News conflict", "Media exposure")) + ylab(expression(rho["turnout x exposure variables"])) + xlab("") + theme(legend.position = c(0.9, 0.9))
+ggplot(cRM, aes(x = countryStr, y = value, ymin = lwr, ymax = upr, group = variable, colour = variable)) + geom_pointrange(position = position_dodge(width = 0.55)) + plotTheme() + coord_flip() + scale_colour_manual("", values = c("expturn" = "grey60", "confturn" = "black"), labels = c("News conflict", "Media exposure")) + ylab(expression(rho["turnout x exposure variables"])) + xlab("") + theme(legend.position = c(0.85, 0.9))
+BJPS <- ddply(BJPS, .(countryStr), transform,#
+  confCent = (news_conflict_new_ny - mean(news_conflict_new_ny, na.rm = T))/sd(news_conflict_new_ny, na.rm = T),#
+  expCent = (news_exposure_ny - mean(news_exposure_ny, na.rm = T))/sd(news_exposure_ny, na.rm = T))
+table1.centered <- glmer(turnout ~ q8_1 + w2_DUMEDUCATION_ny + gender_female_ny + qage_ny + directcontact_ny + indirectcontact_ny + expCent + confCent + v26_r_mean_ny + obl_voting_ny + elections_country_ny + (1 | countryStr), data = BJPS, family = "binomial", verbose = T)#
+summary(table1.new)
+summary(table1.centered)
+table1.noconf <- glmer(turnout ~ q8_1 + w2_DUMEDUCATION_ny + gender_female_ny + qage_ny + directcontact_ny + indirectcontact_ny + expCent + v26_r_mean_ny + obl_voting_ny + elections_country_ny + (1 | countryStr), data = BJPS, family = "binomial", verbose = T)#
+summary(table1.conf)#
+#
+table1.noexp <- glmer(turnout ~ q8_1 + w2_DUMEDUCATION_ny + gender_female_ny + qage_ny + directcontact_ny + indirectcontact_ny + confCent + v26_r_mean_ny + obl_voting_ny + elections_country_ny + (1 | countryStr), data = BJPS, family = "binomial", verbose = T)#
+summary(table1.noexp)#
+#
+table1.nomedia <- glmer(turnout ~ q8_1 + w2_DUMEDUCATION_ny + gender_female_ny + qage_ny + directcontact_ny + indirectcontact_ny + v26_r_mean_ny + obl_voting_ny + elections_country_ny + (1 | countryStr), data = BJPS, family = "binomial", verbose = T)#
+summary(table1.nomedia)
+anova(table1.nomedia, table1.noexp)
+anova(table1.nomedia, table1.noconf)
+anova(table1.noconf, table1.centered)
+anova(table1.noexp, table1.centered)
+anova(table1.nomedia, table1.centered)
+anova(table1.noexp, table1.centered)
+summary(table1.noexp)
+summary(table1.noconf)
+xtable(rbind(anova(table1.nomedia, table1.noexp), anova(table1.nomedia, table1.noconf), anova(table1.noconf, table1.centered), anova(table1.noexp, table1.centered)))
+require(xtable)
+xtable(rbind(anova(table1.nomedia, table1.noexp), anova(table1.nomedia, table1.noconf), anova(table1.noconf, table1.centered), anova(table1.noexp, table1.centered)))
+BJPSORIG <- ddply(BJPSORIG, .(countryStr), transform,#
+  confCent = (news_conflict_new_ny - mean(news_conflict_new_ny, na.rm = T))/sd(news_conflict_new_ny, na.rm = T),#
+  expCent = (news_exposure_ny - mean(news_exposure_ny, na.rm = T))/sd(news_exposure_ny, na.rm = T))#
+#
+## Sequence of models re-evaluating model from Table I (original article)#
+#
+table1.centered <- glmer(turnout ~ q8_1 + w2_DUMEDUCATION_ny + gender_female_ny + qage_ny + directcontact_ny + indirectcontact_ny + expCent + confCent + v26_r_mean_ny + obl_voting_ny + elections_country_ny + (1 | countryStr), data = BJPSORIG, family = "binomial", verbose = T)#
+summary(table1.centered)#
+#
+table1.noconf <- glmer(turnout ~ q8_1 + w2_DUMEDUCATION_ny + gender_female_ny + qage_ny + directcontact_ny + indirectcontact_ny + expCent + v26_r_mean_ny + obl_voting_ny + elections_country_ny + (1 | countryStr), data = BJPSORIG, family = "binomial", verbose = T)#
+summary(table1.noconf)#
+#
+table1.noexp <- glmer(turnout ~ q8_1 + w2_DUMEDUCATION_ny + gender_female_ny + qage_ny + directcontact_ny + indirectcontact_ny + confCent + v26_r_mean_ny + obl_voting_ny + elections_country_ny + (1 | countryStr), data = BJPSORIG, family = "binomial", verbose = T)#
+summary(table1.noexp)#
+#
+table1.nomedia <- glmer(turnout ~ q8_1 + w2_DUMEDUCATION_ny + gender_female_ny + qage_ny + directcontact_ny + indirectcontact_ny + v26_r_mean_ny + obl_voting_ny + elections_country_ny + (1 | countryStr), data = BJPSORIG, family = "binomial", verbose = T)#
+summary(table1.nomedia)#
+anova(table1.nomedia, table1.noexp)#
+anova(table1.nomedia, table1.noconf)#
+anova(table1.noconf, table1.centered)#
+anova(table1.noexp, table1.centered)#
+anova(table1.nomedia, table1.centered)
+table1.centered <- glmer(turnout ~ q8_1 + w2_DUMEDUCATION_ny + gender_female_ny + qage_ny + directcontact_ny + indirectcontact_ny + expCent + confCent + v26_r_mean_ny + obl_voting_ny + elections_country_ny + (1 | countryStr), data = BJPS, family = "binomial", verbose = T)#
+summary(table1.centered)#
+#
+table1.noconf <- glmer(turnout ~ q8_1 + w2_DUMEDUCATION_ny + gender_female_ny + qage_ny + directcontact_ny + indirectcontact_ny + expCent + v26_r_mean_ny + obl_voting_ny + elections_country_ny + (1 | countryStr), data = BJPS, family = "binomial", verbose = T)#
+summary(table1.noconf)#
+#
+table1.noexp <- glmer(turnout ~ q8_1 + w2_DUMEDUCATION_ny + gender_female_ny + qage_ny + directcontact_ny + indirectcontact_ny + confCent + v26_r_mean_ny + obl_voting_ny + elections_country_ny + (1 | countryStr), data = BJPS, family = "binomial", verbose = T)#
+summary(table1.noexp)#
+#
+table1.nomedia <- glmer(turnout ~ q8_1 + w2_DUMEDUCATION_ny + gender_female_ny + qage_ny + directcontact_ny + indirectcontact_ny + v26_r_mean_ny + obl_voting_ny + elections_country_ny + (1 | countryStr), data = BJPS, family = "binomial", verbose = T)#
+summary(table1.nomedia)#
+anova(table1.nomedia, table1.noexp)#
+anova(table1.nomedia, table1.noconf)#
+anova(table1.noconf, table1.centered)#
+anova(table1.noexp, table1.centered)#
+anova(table1.nomedia, table1.centered)
+table3.exposure <- glmer(turnout ~ q8_1 + w2_DUMEDUCATION_ny + gender_female_ny + qage_ny + directcontact_ny + indirectcontact_ny + expCent*v26_r_mean_ny + obl_voting_ny + elections_country_ny + (1 | countryStr) + (-1 + expCent | countryStr), data = BJPS, family = "binomial", verbose = T)#
+summary(table3.exposure)
+table3.conflict <- glmer(turnout ~ q8_1 + w2_DUMEDUCATION_ny + gender_female_ny + qage_ny + directcontact_ny + indirectcontact_ny + confCent * v26_r_mean_ny + obl_voting_ny + elections_country_ny + (1 | countryStr) + (-1 + confCent | countryStr), data = BJPS, family = "binomial", verbose = T)#
+summary(table3.conflict)
+table3.all <- glmer(turnout ~ q8_1 + w2_DUMEDUCATION_ny + gender_female_ny + qage_ny + directcontact_ny + indirectcontact_ny + confCent * v26_r_mean_ny + expCent * v26_r_mean_ny + obl_voting_ny + elections_country_ny + (1 | countryStr) + (-1 + confCent | countryStr) + (-1 + expCent | countryStr), data = BJPS, family = "binomial", verbose = T)#
+summary(table3.all)
+?stargazer
+stargazer(c(table1.noconf, table1.noexp, table3.exposure, table3.conflict), intercept.bottom = T, align = T)
+sum(BJPSNEW$news_conflict_new_ny != 0 & BJPSNEW$news_exposure_ny == 0)
+sum(BJPSNEW$news_conflict_new_ny != 0 & BJPSNEW$news_exposure_ny == 0, na.rm = T)
+BJPSNEW$badCode <- NA#
+BJPSNEW$badCode[BJPSNEW$news_conflict_new_ny != 0 & BJPSNEW$news_exposure_ny] <- 1
+BJPSNEW$badCode <- NA#
+BJPSNEW$badCode[BJPSNEW$news_conflict_new_ny != 0 & BJPSNEW$news_exposure_ny] <- 1#
+BJPSNEW$badCode[BJPSNEW$news_exposure_ny !=0 & !is.na(BJPSNEW$news_exposure_ny)] <- 0
+table(BJPSNEW)
+table(BJPSNEW$badCode)
+BJPSNEW$badCode <- NA#
+BJPSNEW$badCode[BJPSNEW$news_conflict_new_ny != 0 & BJPSNEW$news_exposure_ny == 0] <- 1#
+BJPSNEW$badCode[BJPSNEW$news_exposure_ny !=0 & !is.na(BJPSNEW$news_exposure_ny)] <- 0#
+table(BJPSNEW$badCode)
+table(BJPSNEW$countryStr, BJPSNEW$badCode)
+prop.table(table(BJPSNEW$countryStr, BJPSNEW$badCode), 1)
+prop.table(table(BJPSNEW$countryStr, BJPSNEW$badCode), 1)[, 2]
+table(BJPSNEW$countryStr, BJPSNEW$badCode))[, 2]
+table(BJPSNEW$countryStr, BJPSNEW$badCode)[, 2]
+table(BJPSNEW$countryStr, BJPSNEW$badCode)[, 2]
+data.frame(table(BJPSNEW$countryStr, BJPSNEW$badCode)[, 2])
+bC <- data.frame(table(BJPSNEW$countryStr, BJPSNEW$badCode)[, 2])
+table(BJPSNEW$countryStr)
+bC <- data.frame(table(BJPSNEW$countryStr, BJPSNEW$badCode)[, 2])#
+bC$total <- table(BJPSNEW$countryStr)
+bC
+bC[,1]/bC[, 2]
+table(BJPSNEW$countryStr, useNA = "always")
+bC <- data.frame(table(BJPSNEW$countryStr, BJPSNEW$badCode)[, 2])#
+bC$total <- table(BJPSNEW$countryStr, BJPSNEW$badCode)[, 2] + table(BJPSNEW$countryStr, BJPSNEW$badCode)[, 1]
+bC
+table(BJPS[BJPS$news_exposure_ny == 0, "countryStr"])
+bC <- data.frame(table(BJPSNEW$countryStr, BJPSNEW$badCode)[, 2])#
+bC$total <- table(BJPSNEW$countryStr, BJPSNEW$badCode)[, 2] + table(BJPSNEW$countryStr, BJPSNEW$badCode)[, 1]#
+bC$totalZero <- table(BJPS[BJPS$news_exposure_ny == 0, "countryStr"])
+bC
+names(bC) <- c("Miscoded", "P1", "P2")
+bC$P1 <- round(100*bC$Miscoded/bC$P1, 2)
+bC
+bC$P2 <- round(100*bC$Miscoded/bC$P2, 2)
+bC
+xtable(bC)
+summary(table3.exposure)
+summary(table3.conflict)
+F2 <- data.frame(model.matrix(table3.conflict))
+nc
+nc <- seq(min(F2$news_conflict_new_ny), max(F2$news_conflict_new_ny), by = 0.25)
+F2 <- data.frame(model.matrix(table3.conflict))
+F2 <- data.frame(model.matrix(table3.conflict))#
+nc <- seq(min(F2$confCent), max(F2$confCent), by = 0.25)
+nc
+FP$const <- fixef(table3.conflict.3)[1]#
+FP$tint <- 4*fixef(table3.conflict.3)[2]#
+FP$edu <- 2*fixef(table3.conflict.3)[3]#
+FP$age <- 40*fixef(table3.conflict.3)[5]#
+FP$indc <- fixef(table3.conflict.3)[7]#
+FP$all <- rowSums(FP[, 2:6])#
+FP$low <- invlogit(FP$all + FP$nc*fixef(table3.conflict.3)[8] + (-0.26)*fixef(table3.conflict.3)[9] + FP$nc*(-0.26)*fixef(table3.conflict.3)[12])#
+FP$mid <- invlogit(FP$all + FP$nc*fixef(table3.conflict.3)[8] + (-0.04)*fixef(table3.conflict.3)[9] + FP$nc*(-0.04)*fixef(table3.conflict.3)[12])#
+FP$high <- invlogit(FP$all + FP$nc*fixef(table3.conflict.3)[8] + (0.12)*fixef(table3.conflict.3)[9] + FP$nc*(0.12)*fixef(table3.conflict.3)[12])
+F2 <- data.frame(model.matrix(table3.conflict))#
+nc <- seq(min(F2$confCent), max(F2$confCent), by = 0.25)#
+FP <- data.frame(nc)#
+FP$const <- fixef(table3.conflict)[1]#
+FP$tint <- 4*fixef(table3.conflict)[2]#
+FP$edu <- 2*fixef(table3.conflict)[3]#
+FP$age <- 40*fixef(table3.conflict)[5]#
+FP$indc <- fixef(table3.conflict)[7]#
+FP$all <- rowSums(FP[, 2:6])#
+FP$low <- invlogit(FP$all + FP$nc*fixef(table3.conflict)[8] + (-0.26)*fixef(table3.conflict)[9] + FP$nc*(-0.26)*fixef(table3.conflict)[12])#
+FP$mid <- invlogit(FP$all + FP$nc*fixef(table3.conflict)[8] + (-0.04)*fixef(table3.conflict)[9] + FP$nc*(-0.04)*fixef(table3.conflict)[12])#
+FP$high <- invlogit(FP$all + FP$nc*fixef(table3.conflict)[8] + (0.12)*fixef(table3.conflict)[9] + FP$nc*(0.12)*fixef(table3.conflict)[12])
+FPM <- melt(FP[, c("nc", "low", "mid", "high")], id = "nc")
+ggplot(FPM, aes(x = nc, y = value, group = variable)) + geom_line() + ylim(0, 0.7) + geom_hline(yintercept = 0.5, alpha = 0.3, linetype = 2) + plotTheme() + ylab("Predicted turnout") + xlab("News conflict") + annotate("text", 15, 0.48, label = "AT (-0.26)", size = 2) +#
+annotate("text", 15, 0.565, label = "~FR (-0.04)", size = 2) + annotate("text", 15, 0.675, label = "SP (0.12)", size = 2)
+ggplot(FPM, aes(x = nc, y = value, group = variable)) + geom_line() + ylim(0, 0.7) + geom_hline(yintercept = 0.5, alpha = 0.3, linetype = 2) + plotTheme() + ylab("Predicted turnout") + xlab("News conflict") + annotate("text", 15, 0.48, label = "AT (-0.26)", size = 2)
+FPM <- melt(FP[, c("nc", "low", "mid", "high")], id = "nc")
+ggplot(FPM, aes(x = nc, y = value, group = variable)) + geom_line() + ylim(0, 0.7) + geom_hline(yintercept = 0.5, alpha = 0.3, linetype = 2) + plotTheme() + ylab("Predicted turnout") + xlab("News conflict")
+F3 <- data.frame(model.matrix(table3.exposure))#
+nc <- seq(min(F3$expCent), max(F3$expCent), by = 0.25)#
+FP2 <- data.frame(nc)#
+FP2$const <- fixef(table3.exposure)[1]#
+FP2$tint <- 4*fixef(table3.exposure)[2]#
+FP2$edu <- 2*fixef(table3.exposure)[3]#
+FP2$age <- 40*fixef(table3.exposure)[5]#
+FP2$indc <- fixef(table3.exposure)[7]#
+FP2$all <- rowSums(FP2[, 2:6])#
+FP2$low <- invlogit(FP2$all + FP2$nc*fixef(table3.exposure)[8] + (-0.26)*fixef(table3.exposure)[9] + FP2$nc*(-0.26)*fixef(table3.exposure)[12])#
+FP2$mid <- invlogit(FP2$all + FP2$nc*fixef(table3.exposure)[8] + (-0.04)*fixef(table3.exposure)[9] + FP2$nc*(-0.04)*fixef(table3.exposure)[12])#
+FP2$high <- invlogit(FP2$all + FP2$nc*fixef(table3.exposure)[8] + (0.12)*fixef(table3.exposure)[9] + FP2$nc*(0.12)*fixef(table3.exposure)[12])
+FP
+FP$pred <- "News conflict"#
+FP2$pred <- "News exposure"
+FT <- rbind(FP, FP2)
+FTM <- melt(FP[, c("nc", "low", "mid", "high", "pred")], id = "nc")
+FTM <- melt(FT[, c("nc", "low", "mid", "high", "pred")], id = "nc")
+head(FTM)
+head(FT)
+FTM <- melt(FT[, c("nc", "low", "mid", "high", "pred")], id = c("nc", "pred")
+head(FTM)
+FTM <- melt(FT[, c("nc", "low", "mid", "high", "pred")], id = c("nc", "pred"))
+head(FTM)
+ggplot(FTM, aes(x = nc, y = value, group = variable, colour = pred)) + geom_line() + ylim(0, 0.7) + geom_hline(yintercept = 0.5, alpha = 0.3, linetype = 2) + plotTheme() + ylab("Predicted turnout")
+ggplot(FTM, aes(x = nc, y = value, group = linetype, colour = pred)) + geom_line() + ylim(0, 0.7) + geom_hline(yintercept = 0.5, alpha = 0.3, linetype = 2) + plotTheme() + ylab("Predicted turnout")
+ggplot(FTM, aes(x = nc, y = value, linetype = variable, colour = pred)) + geom_line() + ylim(0, 0.7) + geom_hline(yintercept = 0.5, alpha = 0.3, linetype = 2) + plotTheme() + ylab("Predicted turnout")
+ggplot(FTM, aes(x = nc, y = value, linetype = pred, colour = variable)) + geom_line() + ylim(0, 0.7) + geom_hline(yintercept = 0.5, alpha = 0.3, linetype = 2) + plotTheme() + ylab("Predicted turnout")
+ggplot(FTM, aes(x = nc, y = value, linetype = pred, colour = variable)) + geom_line() + ylim(0, 0.7) + geom_hline(yintercept = 0.5, alpha = 0.3, linetype = 2) + plotTheme() + ylab("Predicted turnout") + xlab("Standardized exposure (group-mean centered)")
+?ggplot
+?scale_x_continuous
+?scale_colour_continuous
+ggplot(FTM, aes(x = nc, y = value, linetype = pred, colour = variable)) + geom_line() + ylim(0, 0.7) + geom_hline(yintercept = 0.5, alpha = 0.3, linetype = 2) + plotTheme() + ylab("Predicted turnout") + xlab("Standardized exposure (group-mean centered)") + scale_colour_manual(values = c("low" = "black", mid = "black", "high" = "black"), guide = F)
+ggplot(FTM, aes(x = nc, y = value, linetype = pred, colour = variable)) + geom_line() + ylim(0, 0.7) + geom_hline(yintercept = 0.5, alpha = 0.3, linetype = 2) + plotTheme() + ylab("Predicted turnout") + xlab("Standardized exposure (group-mean centered)") + scale_colour_manual(values = c("low" = "black", mid = "black", "high" = "black"), guide = F) + scale_linetype_manual("")
+ggplot(FTM, aes(x = nc, y = value, linetype = pred, colour = variable)) + geom_line() + ylim(0, 0.7) + geom_hline(yintercept = 0.5, alpha = 0.3, linetype = 2) + plotTheme() + ylab("Predicted turnout") + xlab("Standardized exposure (group-mean centered)") + scale_colour_manual(values = c("low" = "black", mid = "black", "high" = "black"), guide = F) + scale_linetype_manual("", values = c("News conflict" = "1", "News exposure" = "3"))
+ggplot(FTM, aes(x = nc, y = value, linetype = pred, colour = variable)) + geom_line() + ylim(0, 0.7) + geom_hline(yintercept = 0.5, alpha = 0.3, linetype = 2) + plotTheme() + ylab("Predicted turnout") + xlab("Standardized exposure (group-mean centered)") + scale_colour_manual(values = c("low" = "black", mid = "black", "high" = "black"), guide = F) + scale_linetype_manual("", values = c("News conflict" = 1, "News exposure" = 3))
+ggplot(FTM, aes(x = nc, y = value, linetype = pred, colour = variable)) + geom_line() + ylim(0, 0.7) + geom_hline(yintercept = 0.5, alpha = 0.3, linetype = 2) + plotTheme() + ylab("Predicted turnout") + xlab("Standardized exposure (group-mean centered)") + scale_colour_manual(values = c("low" = "black", mid = "black", "high" = "black"), guide = F) + scale_linetype_manual("", values = c("News conflict" = 1, "News exposure" = 3)) + theme(legend.position(0.1, 0.2))
+ggplot(FTM, aes(x = nc, y = value, linetype = pred, colour = variable)) + geom_line() + ylim(0, 0.7) + geom_hline(yintercept = 0.5, alpha = 0.3, linetype = 2) + plotTheme() + ylab("Predicted turnout") + xlab("Standardized exposure (group-mean centered)") + scale_colour_manual(values = c("low" = "black", mid = "black", "high" = "black"), guide = F) + scale_linetype_manual("", values = c("News conflict" = 1, "News exposure" = 3)) + theme(legend.position = c(0.1, 0.2))
+ggplot(FTM, aes(x = nc, y = value, linetype = pred, colour = variable)) + geom_line() + ylim(0, 0.7) + geom_hline(yintercept = 0.5, alpha = 0.3, linetype = 2) + plotTheme() + ylab("Predicted turnout") + xlab("Standardized exposure (group-mean centered)") + scale_colour_manual(values = c("low" = "black", mid = "black", "high" = "black"), guide = F) + scale_linetype_manual("", values = c("News conflict" = 1, "News exposure" = 3)) + theme(legend.position = c(0.2, 0.2))
+ggplot(FTM, aes(x = nc, y = value, linetype = pred, colour = variable)) + geom_line() + ylim(0, 0.7) + geom_hline(yintercept = 0.5, alpha = 0.3, linetype = 2) + plotTheme() + ylab("Predicted turnout") + xlab("Standardized exposure (group-mean centered)") + scale_colour_manual(values = c("low" = "black", mid = "black", "high" = "black"), guide = F) + scale_linetype_manual("", values = c("News conflict" = 1, "News exposure" = 3)) + theme(legend.position = c(0.2, 0.2)) + annotate("text", 7, 0.48, label = "AT (-0.26)", size = 2) + annotate("text", 7, 0.565, label = "~FR (-0.04)", size = 2) + annotate("text", 7, 0.675, label = "SP (0.12)", size = 2)
+ggplot(FTM, aes(x = nc, y = value, linetype = pred, colour = variable)) + geom_line() + ylim(0, 0.7) + geom_hline(yintercept = 0.5, alpha = 0.3, linetype = 2) + plotTheme() + ylab("Predicted turnout") + xlab("Standardized exposure (group-mean centered)") + scale_colour_manual(values = c("low" = "black", mid = "black", "high" = "black"), guide = F) + scale_linetype_manual("", values = c("News conflict" = 1, "News exposure" = 3)) + theme(legend.position = c(0.2, 0.2)) + annotate("text", 7, 0.46, label = "AT (-0.26)", size = 2) + annotate("text", 7, 0.545, label = "~FR (-0.04)", size = 2) + annotate("text", 7, 0.655, label = "SP (0.12)", size = 2)
+ggplot(FTM, aes(x = nc, y = value, linetype = pred, colour = variable)) + geom_line() + ylim(0, 0.7) + geom_hline(yintercept = 0.5, alpha = 0.3, linetype = 2) + plotTheme() + ylab("Predicted turnout") + xlab("Standardized exposure (group-mean centered)") + scale_colour_manual(values = c("low" = "black", mid = "black", "high" = "black"), guide = F) + scale_linetype_manual("", values = c("News conflict" = 1, "News exposure" = 3)) + theme(legend.position = c(0.2, 0.2)) + annotate("text", 7, 0.45, label = "AT (-0.26)", size = 2) + annotate("text", 7, 0.55, label = "~FR (-0.04)", size = 2) + annotate("text", 7, 0.65, label = "SP (0.12)", size = 2)
+ggplot(FTM, aes(x = nc, y = value, linetype = pred, colour = variable)) + geom_line() + ylim(0, 0.7) + geom_hline(yintercept = 0.5, alpha = 0.3, linetype = 2) + plotTheme() + ylab("Predicted turnout") + xlab("Standardized exposure (group-mean centered)") + scale_colour_manual(values = c("low" = "black", mid = "black", "high" = "black"), guide = F) + scale_linetype_manual("", values = c("News conflict" = 1, "News exposure" = 3)) + theme(legend.position = c(0.2, 0.2)) + annotate("text", 6.8, 0.45, label = "AT (-0.26)", size = 2) + annotate("text", 6.8, 0.55, label = "~FR (-0.04)", size = 2) + annotate("text", 6.8, 0.65, label = "SP (0.12)", size = 2)
+ggplot(FTM, aes(x = nc, y = value, linetype = pred, colour = variable)) + geom_line() + ylim(0, 0.7) + geom_hline(yintercept = 0.5, alpha = 0.3, linetype = 2) + plotTheme() + ylab("Predicted turnout") + xlab("Standardized exposure (group-mean centered)") + scale_colour_manual(values = c("low" = "black", mid = "black", "high" = "black"), guide = F) + scale_linetype_manual("", values = c("News conflict" = 1, "News exposure" = 3)) + theme(legend.position = c(0.2, 0.2)) + annotate("text", 6.8, 0.45, label = "AT (-0.26)", size = 2) + annotate("text", 6.8, 0.55, label = "FR (-0.04)", size = 2) + annotate("text", 6.8, 0.65, label = "SP (0.12)", size = 2)
+ggplot(FTM, aes(x = nc, y = value, linetype = pred, colour = variable)) + geom_line() + ylim(0, 0.7) + geom_hline(yintercept = 0.5, alpha = 0.3, linetype = 2) + plotTheme() + ylab("Predicted turnout") + xlab("Standardized exposure (group-mean centered)") + scale_colour_manual(values = c("low" = "black", mid = "black", "high" = "black"), guide = F) + scale_linetype_manual("", values = c("News conflict" = 1, "News exposure" = 3)) + theme(legend.position = c(0.2, 0.2)) + annotate("text", 6.8, 0.45, label = "AT (-0.26)", size = 2) + annotate("text", 6.8, 0.555, label = "FR (-0.04)", size = 2) + annotate("text", 6.8, 0.65, label = "SP (0.12)", size = 2)
