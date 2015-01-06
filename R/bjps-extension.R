@@ -203,7 +203,7 @@ NC <- MED %>%
                   totalBal = sum(V26 == 5, na.rm = T),
                   totalNon = sum(V26 == 2, na.rm = T),
                   polity = mean(peval, na.rm = T),
-                  totalStories = length(Entry),
+                  totalStories = n(),
                   countryStr = unique(countryStr))
 head(NC)
 ## write.csv(NC, "media-outlets-2009.csv", row.names = F)

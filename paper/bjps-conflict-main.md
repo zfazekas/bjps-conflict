@@ -57,12 +57,12 @@ While SVdV do not discuss in detail the properties of the scenario with both pre
         \centering
         \captionsetup[figure]{labelformat=empty}
         \caption*[]{(A)}
-    \includegraphics[scale = 0.6]{f2-a.png}
+    \includegraphics[scale = 0.5]{f1-a.pdf}
     \end{minipage}
     \begin{minipage}{0.48\textwidth}
         \centering
                 \caption*[]{(B)}
-        \includegraphics[scale = 0.49]{f2-b.png}
+        \includegraphics[scale = 0.5]{f1-b.pdf}
     \end{minipage}
     \begin{minipage}{\textwidth}
         \centering
@@ -119,7 +119,7 @@ AIC & \multicolumn{1}{c}{23,166.700} & \multicolumn{1}{c}{23,164.100} & \multico
     \centering
     \caption*[]%
   {Figure 2: News conflict vs. news exposure, cross-level interaction\clfootnote[0]{Predicted turnout as a function of news conflict (solid lines, based on news conflict only cross-level interaction model, Table 2) and news exposure (dotted lines, based on news conflict only cross-level interaction model, Table 2) for different polity evaluation levels (SP = Spain, SK = Slovakia, AT = Austria). All other variables fixed at values described in the text and by SVdV, predictions based on fixed-effects only. Predictors were group-mean centered and standardized (one SD, within country).}}
-    \includegraphics[scale = 0.5]{f3.png}
+    \includegraphics[scale = 0.65]{f2.pdf}
     \end{minipage}
 \end{figure}
 

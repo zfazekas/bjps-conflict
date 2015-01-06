@@ -114,22 +114,22 @@ However, confidence intervals and the distribution of the key variable help us t
         \centering
         \captionsetup[figure]{labelformat=empty}
         \caption*{(A)}
-    \includegraphics[scale = 0.35]{f1-a.png}
+    \includegraphics[scale = 0.52]{f-si-1-a.pdf}
     \end{minipage}
     \begin{minipage}[t][0.5\textheight][t]{0.45\textwidth}
         \centering
                 \caption*[]%
   {(B)\clfootnote[0]{}}
-        \includegraphics[scale = 0.6]{f1-b.png}
+        \includegraphics[scale = 0.52]{f-si-1-b.pdf}
     \end{minipage}
 
     \nointerlineskip
-    \begin{minipage}[b][0.49\textheight][t]{\textwidth}
+    \begin{minipage}[b][0.5\textheight][t]{\textwidth}
         \centering
         \vspace{-1.75in}
                 \caption*[]%
   {(C)\clfootnote[0]{Panel (A): predicted turnout as a function of news conflict for different polity evaluation levels (reproducing Figure 2 by SVdV). All other variables fixed at values described in the text and by SVdV, predictions based on fixed-effects only. Distribution of news conflict on the 20 country original sample. Panel (B): difference in predicted turnout between most positive and most negative polity evaluation countries plotted against the \% of the sample in a country with news conflict values for which the $\delta$ turnout probability was calculated. Panel (C): identical to Panel (A) with 95\% confidence intervals calculated based on fixed-effects (and their standard errors) only. Random effects are averaged over, news conflict values range from its minimum ($0$) to its maximum ($15.5$), with increments of $0.25$ for the prediction.}}
-        \includegraphics[scale = 0.65]{f1-c.png}
+        \includegraphics[scale = 0.7]{f-si-1-c.pdf}
     \end{minipage}
 \end{figure}
 
