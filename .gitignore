@@ -4,6 +4,7 @@ data/*.pdf
 data/.Rapp.history
 formatted/*
 for-publisher/*
+paper/*
 R/.Rapp.history
 R/.Rhistory
 

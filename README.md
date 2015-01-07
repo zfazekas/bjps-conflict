@@ -40,7 +40,7 @@ Supporting material for the research note at the British Journal of Political Sc
 - If repository forked or downloaded for replication purposes, all downloaded original datasets should be placed in this folder and the scripts will run automatically (assuming you have set that once you open an R script, for example, the current working directory will be in `/R/`)
 - `country-vars.csv`: dataset with two contextual variables (compVote = compulsory voting, and simElec = simultaneous national elections) and a country ID variable. This is only used by the `R` scripts, and it is equally possible to simply create these variables within the script. Coding is based on SVdV's coding for the countries in their analysis, and for the rest of the countries it was compiled by the authors.
 
-#### `/paper/`
+#### `/paper/` - PENDING
 
 - `bjps-conflict-main.md` = Original main text version (submitted)
 - `bjps-conflict-si.md` = Original supplementary materials version (submitted)
@@ -57,6 +57,7 @@ Supporting material for the research note at the British Journal of Political Sc
 #### `/figures/`
 
 - `.png` files for figures
+- `.pdf` files for figures
 
 #### Producing PDF document
 
